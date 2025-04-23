@@ -7,6 +7,8 @@ A Java-based movie booking web application for DIU Kazi Nazrul Islam EduPlex fea
 - Booking history
 - Tailwind CSS for a dynamic, green & blue DIU-themed frontend
 
+**Created by Sameul Hasan, Department of Software Engineering, DIU**
+
 ---
 
 ## Tech Stack
@@ -60,11 +62,21 @@ diu-eduplex/
 ## Setup Instructions
 
 1. **Clone the repository**
-2. **Install dependencies:** `mvn clean install`
-3. **Setup MySQL DB:** Use XAMPP, import `db/schema.sql`
-4. **Configure DB credentials:** `src/main/java/util/DBUtil.java`
-5. **Configure email:** `src/main/java/util/MailUtil.java`
-6. **Run on Tomcat:** Deploy `war` from Maven or use Tomcat manager
+2. **Install dependencies:**  
+   ```
+   mvn clean install
+   ```
+3. **Setup MySQL Database:**  
+   - Start MySQL (e.g., XAMPP)
+   - Import `db/schema.sql`
+4. **Configure Database Credentials:**  
+   - Edit `src/main/java/util/DBUtil.java` with your DB username and password.
+5. **Configure Email SMTP (for booking confirmation):**  
+   - Edit `src/main/java/util/MailUtil.java` with your SMTP provider settings (e.g., Gmail).
+6. **Build and Deploy WAR:**  
+   - Run: `mvn clean package`
+   - Copy `target/diu-eduplex.war` to Tomcat's `webapps/` folder.
+   - Start Tomcat and visit [http://localhost:8080/diu-eduplex](http://localhost:8080/diu-eduplex)
 
 ---
 
@@ -74,13 +86,15 @@ Use [this logo](https://images.app.goo.gl/w8LPRyhLx5yTpVfR9) (save as `assets/lo
 
 ---
 
-## Note
+## Notes
 
 - The UI uses DIU green (`#32CD32`) and blue (`#0072CE`).
-- Booking confirmation emails require SMTP config (e.g., Gmail).
+- Booking confirmation emails require working SMTP config.
+- If you change the WAR name, update the Tomcat URL accordingly.
 
 ---
 
 ## Author
 
-Built for DIU Kazi Nazrul Islam EduPlex
+Sameul Hasan  
+Department of Software Engineering, DIU
